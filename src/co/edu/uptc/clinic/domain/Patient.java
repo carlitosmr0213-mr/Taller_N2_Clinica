@@ -3,8 +3,8 @@ package co.edu.uptc.clinic.domain;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import co.udu.uptc.clinic.enums.IdentificationType;
-import co.udu.uptc.clinic.enums.Priority;
+import co.edu.uptc.clinic.enums.IdentificationType;
+import co.edu.uptc.clinic.enums.Priority;
 
 public class Patient {
 	

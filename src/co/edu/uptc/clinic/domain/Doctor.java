@@ -1,6 +1,6 @@
 package co.edu.uptc.clinic.domain;
 
-import co.udu.uptc.clinic.enums.IdentificationType;
+import co.edu.uptc.clinic.enums.IdentificationType;
 
 public class Doctor {
 	

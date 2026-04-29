@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import co.edu.uptc.clinic.domain.Patient;
-import co.udu.uptc.clinic.enums.IdentificationType;
+import co.edu.uptc.clinic.enums.IdentificationType;
 
 public class PatientRepository {
 	

@@ -1,4 +1,4 @@
-package co.udu.uptc.clinic.enums;
+package co.edu.uptc.clinic.enums;
 
 public enum Priority {
 	
