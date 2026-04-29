@@ -4,14 +4,15 @@ public enum IdentificationType {
 	
 	CC("Cédula de ciudadanía"), TI("Tarjeta de identidad"), CE("Cédula de extranjería"), PA("Pasaporte");
 	
-	private String IdType;
+	private String nameType;
 
-	private IdentificationType(String idType) {
-		IdType = idType;
+	private IdentificationType(String nameType) {
+		this.nameType = nameType;
 	}
 
 	public String getIdType() {
-		return IdType;
+		return nameType;
 	}
+	
 
 }
