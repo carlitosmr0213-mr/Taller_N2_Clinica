@@ -1,15 +1,16 @@
 package co.edu.uptc.clinic.domain;
 
 import java.time.LocalTime;
+import java.util.Objects;
 
-public class MedicalAppointmet {
+public class MedicalAppointment {
 	
     private String idMedicalAppointment;
     private LocalTime timeAppointment;
     private Patient patient;
     private Doctor doctor;
     
-	public MedicalAppointmet(String idMedicalAppointment, LocalTime timeAppointment, Patient patient, Doctor doctor) {
+	public MedicalAppointment(String idMedicalAppointment, LocalTime timeAppointment, Patient patient, Doctor doctor) {
 		super();
 		this.idMedicalAppointment = idMedicalAppointment;
 		this.timeAppointment = timeAppointment;
@@ -42,17 +43,18 @@ public class MedicalAppointmet {
 		this.doctor = doctor;
 	}
 	
-	
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+		if(this == obj) return true;
+		if(obj ==null || getClass() != obj.getClass()) return false;
+		
+		MedicalAppointment appointment= (MedicalAppointment) obj;
+		return Objects.equals(idMedicalAppointment, appointment.getIdMedicalAppointment());
 	}
 	
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		return Objects.hash(idMedicalAppointment);
 	}
 
 	@Override

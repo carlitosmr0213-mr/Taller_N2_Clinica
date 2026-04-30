@@ -1,6 +1,7 @@
 package co.edu.uptc.clinic.domain;
 
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import co.edu.uptc.clinic.enums.IdentificationType;
@@ -78,14 +79,18 @@ public class Patient {
 	
     @Override
     public boolean equals(Object obj) {
-    	// TODO Auto-generated method stub
-    	return super.equals(obj);
+    	/*this objeto actual se compara con obj y si apuntan al mismo lugar de memoria son iguales*/
+    	if (this == obj) return true;
+    	if (obj == null || getClass() != obj.getClass()) return false;
+    	
+    	Patient patient = (Patient) obj;
+    	return this.idPatient.equals(patient.getIdPatient()) 
+    			&& this.identificationType.equals(patient.getIdentificationType());
     }
     
     @Override
     public int hashCode() {
-    	// TODO Auto-generated method stub
-    	return super.hashCode();
+    	return Objects.hash(identificationType, idPatient);
     }
 
 	@Override

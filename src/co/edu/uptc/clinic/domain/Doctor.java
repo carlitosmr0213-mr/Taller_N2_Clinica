@@ -1,11 +1,13 @@
 package co.edu.uptc.clinic.domain;
 
+import java.util.Objects;
+
 import co.edu.uptc.clinic.enums.IdentificationType;
 
 public class Doctor {
 	
     private IdentificationType identificationType;
-    private long medicalId;
+    private Long medicalId;
     private String firstName;
     private String lastName;
     private String specialty;
@@ -62,14 +64,17 @@ public class Doctor {
 	/*metodos*/
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+		if (this == obj) return true;
+		if (obj == null || getClass() != obj.getClass()) return false;
+		
+		Doctor doctor = (Doctor) obj;
+		return this.medicalId.equals(doctor.getMedicalId())
+				&& this.identificationType.equals(doctor.getIdentificationType());
 	}
 	
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		return Objects.hash(identificationType,medicalId);
 	}
 
 	@Override
