@@ -2,9 +2,8 @@ package co.edu.uptc.clinic.repository;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import co.edu.uptc.clinic.domain.Patient;
-import co.edu.uptc.clinic.enums.IdentificationType;
+import co.edu.uptc.clinic.enums.IdentificationTypeEnum;
 
 public class PatientRepository {
 	
@@ -29,7 +28,7 @@ public class PatientRepository {
 	}
 	
 	
-	public boolean existsByIdentification(IdentificationType type, long idPatient) {
+	public boolean existsByIdentification(IdentificationTypeEnum type, long idPatient) {
         return patients.stream()
                 .anyMatch(p -> p.getIdentificationType() == type && p.getIdPatient() == idPatient);
     }

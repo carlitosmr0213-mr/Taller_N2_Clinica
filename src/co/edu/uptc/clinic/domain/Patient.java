@@ -3,23 +3,22 @@ package co.edu.uptc.clinic.domain;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
-
-import co.edu.uptc.clinic.enums.IdentificationType;
-import co.edu.uptc.clinic.enums.Priority;
+import co.edu.uptc.clinic.enums.IdentificationTypeEnum;
+import co.edu.uptc.clinic.enums.PriorityEnum;
 
 public class Patient {
 	
-	private IdentificationType identificationType;
+	private IdentificationTypeEnum identificationType;
     private Long idPatient;
     private String firstName;
     private String lastName;
     private String email;
-    private Priority priority;
+    private PriorityEnum priority;
     private Set<String> medicationHistory;
     
     
-	public Patient(IdentificationType identificationType, long idPatient, String firstName, String lastName,
-			String email, Priority priority, Set<String> medicationHistory) {
+	public Patient(IdentificationTypeEnum identificationType, long idPatient, String firstName, String lastName,
+			String email, PriorityEnum priority, Set<String> medicationHistory) {
 		super();
 		this.identificationType = identificationType;
 		this.idPatient = idPatient;
@@ -31,10 +30,10 @@ public class Patient {
 	}
 	
 	/*gets y sets*/
-	public IdentificationType getIdentificationType() {
+	public IdentificationTypeEnum getIdentificationType() {
 		return identificationType;
 	}
-	public void setIdentificationType(IdentificationType identificationType) {
+	public void setIdentificationType(IdentificationTypeEnum identificationType) {
 		this.identificationType = identificationType;
 	}
 	public Long getIdPatient() {
@@ -61,10 +60,10 @@ public class Patient {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Priority getPriority() {
+	public PriorityEnum getPriority() {
 		return priority;
 	}
-	public void setPriority(Priority priority) {
+	public void setPriority(PriorityEnum priority) {
 		this.priority = priority;
 	}
 	public Set<String> getMedicationHistory() {

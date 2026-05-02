@@ -1,19 +1,18 @@
 package co.edu.uptc.clinic.domain;
 
 import java.util.Objects;
-
-import co.edu.uptc.clinic.enums.IdentificationType;
+import co.edu.uptc.clinic.enums.IdentificationTypeEnum;
 
 public class Doctor {
 	
-    private IdentificationType identificationType;
+    private IdentificationTypeEnum identificationType;
     private Long medicalId;
     private String firstName;
     private String lastName;
     private String specialty;
     private int yearsOfExperience;
     
-	public Doctor(IdentificationType identificationType, long medicalId, String firstName, String lastName,
+	public Doctor(IdentificationTypeEnum identificationType, long medicalId, String firstName, String lastName,
 			String specialty, int yearsOfExperience) {
 		super();
 		this.identificationType = identificationType;
@@ -24,10 +23,10 @@ public class Doctor {
 		this.yearsOfExperience = yearsOfExperience;
 	}
 
-	public IdentificationType getIdentificationType() {
+	public IdentificationTypeEnum getIdentificationType() {
 		return identificationType;
 	}
-	public void setIdentificationType(IdentificationType identificationType) {
+	public void setIdentificationType(IdentificationTypeEnum identificationType) {
 		this.identificationType = identificationType;
 	}
 	public long getMedicalId() {
