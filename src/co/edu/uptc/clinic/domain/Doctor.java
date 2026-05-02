@@ -12,7 +12,7 @@ public class Doctor {
     private String specialty;
     private int yearsOfExperience;
     
-	public Doctor(IdentificationTypeEnum identificationType, long medicalId, String firstName, String lastName,
+	public Doctor(IdentificationTypeEnum identificationType, Long medicalId, String firstName, String lastName,
 			String specialty, int yearsOfExperience) {
 		super();
 		this.identificationType = identificationType;
@@ -29,10 +29,10 @@ public class Doctor {
 	public void setIdentificationType(IdentificationTypeEnum identificationType) {
 		this.identificationType = identificationType;
 	}
-	public long getMedicalId() {
+	public Long getMedicalId() {
 		return medicalId;
 	}
-	public void setMedicalId(long medicalId) {
+	public void setMedicalId(Long medicalId) {
 		this.medicalId = medicalId;
 	}
 	public String getFirstName() {

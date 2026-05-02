@@ -3,7 +3,7 @@ package co.edu.uptc.clinic.domain;
 import java.time.LocalTime;
 import java.util.Objects;
 
-public class MedicalAppointment {
+public class MedicalAppointment implements Comparable<MedicalAppointment>{
 	
     private String idMedicalAppointment;
     private LocalTime timeAppointment;
@@ -62,6 +62,16 @@ public class MedicalAppointment {
 				+ ", timeAppointment="	+ timeAppointment 
 				+ ", patient=" + patient 
 				+ ", doctor="  + doctor + "]";
+	}
+
+	@Override
+	public int compareTo(MedicalAppointment o) {
+		int timeComparison = this.timeAppointment.compareTo(o.timeAppointment);
+		if(timeComparison !=0) {
+			return timeComparison;
+		}
+		return Integer.compare(o.patient.getPriority().getLevel(), this.patient.getPriority().getLevel());
+				
 	}
 	
 	
