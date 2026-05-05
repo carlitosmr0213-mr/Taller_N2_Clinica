@@ -3,7 +3,7 @@ package co.edu.uptc.clinic.domain;
 import java.util.Objects;
 import co.edu.uptc.clinic.enums.IdentificationTypeEnum;
 
-public class Doctor {
+public class Doctor implements Comparable<Doctor>{
 	
     private IdentificationTypeEnum identificationType;
     private Long medicalId;
@@ -61,6 +61,11 @@ public class Doctor {
 	}
 
 	/*metodos*/
+	public String getFullName() {
+		return firstName +" "+ lastName;
+	}
+	
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) return true;
@@ -84,6 +89,15 @@ public class Doctor {
 				+ ", lastName="  + lastName 
 				+ ", specialty=" + specialty 
 				+ ", yearsOfExperience=" + yearsOfExperience + "]";
+	}
+
+	@Override
+	public int compareTo(Doctor o) {
+		int experienceComparison = Integer.compare(this.yearsOfExperience, o.yearsOfExperience);
+		if (experienceComparison !=0) {
+			return experienceComparison;
+		}
+		return this.getFullName().compareTo(o.getFullName());
 	}
 	
     

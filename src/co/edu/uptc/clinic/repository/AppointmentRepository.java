@@ -17,7 +17,6 @@ public class AppointmentRepository {
 	public Set<MedicalAppointment> findAll() {
         return appointments;
     }
-
 	
 	public boolean save(MedicalAppointment appointment) {
 		if(existById(appointment.getIdMedicalAppointment())) {
@@ -25,8 +24,6 @@ public class AppointmentRepository {
 		}
 		return appointments.add(appointment);
 	}
-	
-	
 	
 	public Optional<MedicalAppointment> findById(String id){
 		return appointments.stream().filter(a -> a.getIdMedicalAppointment().equals(id))

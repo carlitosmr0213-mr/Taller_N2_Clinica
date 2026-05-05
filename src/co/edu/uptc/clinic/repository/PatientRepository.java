@@ -13,6 +13,7 @@ public class PatientRepository {
 	public PatientRepository() {
 		this.patients = new HashSet<Patient>();
 	}
+	
 	/**Registra un nuevo paciente en el sistema.
      * Verifica que no exista otro con la misma identificación ni el mismo email.
      * @param patient: paciente a registrar
