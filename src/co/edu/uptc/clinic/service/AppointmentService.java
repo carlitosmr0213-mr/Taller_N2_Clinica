@@ -1,6 +1,9 @@
 package co.edu.uptc.clinic.service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import co.edu.uptc.clinic.domain.Doctor;
 import co.edu.uptc.clinic.domain.MedicalAppointment;
@@ -51,6 +54,18 @@ public class AppointmentService {
 		return "ERROR: No se pudo registrar la cita";
 	}
 	
+	public List<MedicalAppointment> getAttentionQueue() {
+        return appointmentRepository.findAll().stream()
+                .sorted()
+                .collect(Collectors.toList());
+	}
 	
+	public Set<MedicalAppointment> getAllAppointments() {
+        return appointmentRepository.findAll();
+    }
 	
-}
+    public int getTotalAppointments() {
+        return appointmentRepository.count();
+    }
+}	
+	

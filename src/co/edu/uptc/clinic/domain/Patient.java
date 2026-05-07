@@ -18,7 +18,7 @@ public class Patient {
     
     
 	public Patient(IdentificationTypeEnum identificationType, long idPatient, String firstName, String lastName,
-			String email, PriorityEnum priority, Set<String> medicationHistory) {
+			String email, PriorityEnum priority) {
 		super();
 		this.identificationType = identificationType;
 		this.idPatient = idPatient;
@@ -72,6 +72,11 @@ public class Patient {
 	public boolean addMedication(String medication) {
 		return medicationHistory.add(medication);
 	}
+	
+	public String getFullName() {
+		return firstName+ " "+lastName;
+	}
+	
     
 	
 	/*Metodos*/
@@ -94,7 +99,7 @@ public class Patient {
 
 	@Override
 	public String toString() {
-		return "Patient [identificationType=" + identificationType 
+		return "Patient [identificationType=" + identificationType.getNameType() 
 				+ ", idPatient=" + idPatient 
 				+ ", firstName=" + firstName 
 				+ ", lastName="  + lastName 

@@ -10,7 +10,7 @@ public enum IdentificationTypeEnum {
 		this.nameType = nameType;
 	}
 
-	public String getIdType() {
+	public String getNameType() {
 		return nameType;
 	}
 	
