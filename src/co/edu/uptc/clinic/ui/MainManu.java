@@ -41,9 +41,6 @@ public class MainManu{
 		/**
 		 * Constructor que inicializa todos los repositorios y servicios del sistema.
 		 *
-		 * @param patientService Parámetro que determina los servicios de los pacientes
-		 * @param doctorService Parámetro que determina los servicios de los doctores
-		 * @param appointmentService Parámetro que determina los servicios de las citas medicas
 		 */
 		public MainManu() {
 			PatientRepository patientRepository = new PatientRepository();
@@ -59,10 +56,7 @@ public class MainManu{
 		 * <b>Descripción: </b> Método encargado de iniciar el ciclo principal del menú del sistema.
      * Muestra opciones hasta que el usuario decida salir. ... <br>
 		 * 
-		 * @author Carlitos
 		 *
-		 * @return void
-		 * @throws Exception [Condición en la que ocurre]
 		 */
 		public void star() {
 			boolean running = true;
@@ -79,24 +73,27 @@ public class MainManu{
 	                    "8. Salir"	
 				};
 				
-				int choise = JOptionPane.showOptionDialog(null, 
+				String selected = (String) JOptionPane.showInputDialog(null, 
 						"Clínica El Laguito\nSeleccione una opción:", 
 						"Menú Principal",
-						JOptionPane.DEFAULT_OPTION,
 						JOptionPane.PLAIN_MESSAGE, 
 						null, 
 						options,
 						options[0]);
+				if(selected == null) {
+					running = false;
+					continue;
+				}
 				
-				switch (choise) {
-				case 0 -> registerPatient();
-				case 1 -> registerDoctor();
-				case 2 -> registerAppointment();
-				case 3 -> addMedication();
-				case 4 -> showAttentionQueue();
-				case 5 -> showDoctorExperienceReport();
-				case 6 -> showAllPatients();
-				case 7, -1 -> running = false;
+				switch (selected) {
+				case "1. Registrar Paciente" -> registerPatient();
+				case "2. Registrar Médico" -> registerDoctor();
+				case "3. Registrar Cita Médica" -> registerAppointment();
+				case "4. Agregar Medicamento a Paciente" -> addMedication();
+				case "5. Ver Cola de Atención" -> showAttentionQueue();
+				case "6. Reporte de Médicos por Experiencia" -> showDoctorExperienceReport();
+				case "7. Ver Todos los Pacientes" -> showAllPatients();
+				case "8. Salir" -> running = false;
 				}
 			}
 			JOptionPane.showMessageDialog(null, "Sistema cerrado.", "Salir", JOptionPane.INFORMATION_MESSAGE);
@@ -234,7 +231,7 @@ public class MainManu{
 	                    appointment, patientIdType, patientId, doctorIdType, doctorId
 	            );
 	 
-	            if (result.equals("OK")) {
+	            if (result.equals("Realizado")) {
 	                JOptionPane.showMessageDialog(null, "Cita médica registrada exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
 	            } else {
 	                JOptionPane.showMessageDialog(null, result, "Error", JOptionPane.ERROR_MESSAGE);
